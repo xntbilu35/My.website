@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilal's Romantic Website</title>
+    <title>For Someone Special</title>
     <style>
         body {
             margin: 0;
-            overflow: hidden;
+            padding: 0;
+            height: 100vh;
             background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
-            background-size: 600% 600%;
+            background-size: 400% 400%;
             animation: gradient 10s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: #333;
-            font-family: 'Arial', sans-serif;
             flex-direction: column;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
 
         @keyframes gradient {
@@ -28,50 +28,83 @@
         }
 
         h1 {
-            font-size: 3em;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        p {
-            margin-top: 20px;
-            font-size: 1.2em;
+            color: white;
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
 
         button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #ff6f61;
+            padding: 15px 30px;
             border: none;
-            border-radius: 5px;
+            background: #ff4e75;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
             cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 15px #ff4e75;
         }
 
         button:hover {
-            background-color: #ff4f41;
+            background: #ff2e5f;
+            box-shadow: 0 0 25px #ff2e5f;
+        }
+
+        #message {
+            display: none;
+            margin-top: 30px;
+            font-size: 32px;
+            color: white;
+            text-shadow: 0 0 10px #fff;
+            animation: heartBeat 1s infinite;
+        }
+
+        @keyframes heartBeat {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.1);}
+            100% {transform: scale(1);}
+        }
+
+        .heart {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+            background-size: contain;
+            animation: fall 5s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes fall {
+            0% {transform: translateY(-100px) scale(1);}
+            100% {transform: translateY(100vh) scale(1.5); opacity: 0;}
         }
     </style>
 </head>
-<body>
 
-    <h1>Tap to Play</h1>
-    <p>Bilal ki Romantic Website - Enjoy the Music!</p>
-    <button onclick="playMusic()">Play Music</button>
-    <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+<body>
+    <!-- Hindi Style Romantic Instrumental -->
+    <audio id="music" src="https://www.chosic.com/wp-content/uploads/2021/11/Ikson-Late.mp3" loop></audio>
+
+    <h1>For Someone Special</h1>
+    <button onclick="showMessage()">Click Here</button>
+    <div id="message">Be My Pookie</div>
+
+    <!-- Hearts -->
+    <div class="heart" style="left:10%; animation-delay:0s;"></div>
+    <div class="heart" style="left:25%; animation-delay:1s;"></div>
+    <div class="heart" style="left:40%; animation-delay:2s;"></div>
+    <div class="heart" style="left:55%; animation-delay:0.5s;"></div>
+    <div class="heart" style="left:70%; animation-delay:1.5s;"></div>
+    <div class="heart" style="left:85%; animation-delay:0.8s;"></div>
 
     <script>
-        function playMusic() {
-            var audio = document.getElementById("music");
-            audio.play();
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('music').play();
         }
     </script>
-
 </body>
+
 </html>
